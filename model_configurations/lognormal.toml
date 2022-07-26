@@ -1,0 +1,18 @@
+name = "lognormal"
+stan_file = "src/stan/lognormal.stan"
+data_dir = "data/prepared/lognormal"
+modes = ["prior", "posterior"]
+
+[stanc_options]
+warn-pedantic = true
+
+[sample_kwargs]
+show_progress = true
+save_warmup = false
+iter_warmup = 200
+iter_sampling = 200
+inits=0.1
+refresh=1
+
+# [sample_kwargs.cross_validation]
+# chains = 1
