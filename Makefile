@@ -22,7 +22,6 @@ env: $(ACTIVATE_VENV) $(REQUIREMENTS_FILE) $(CMDSTAN)
 
 analysis: env
 	. $(ACTIVATE_VENV) && (\
-	  python -m pytest; \
 	  python prepare_data.py; \
 	  python sample.py; \
 	  jupyter execute investigate.ipynb; \
